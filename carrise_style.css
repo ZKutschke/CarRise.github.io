@@ -1,0 +1,309 @@
+/*
+layout of style modifiers
+.class{
+	Spatial things
+		margin
+		padding (top, bottom, left, right)
+		float
+		overflow
+	Structure 
+		height (min, max)
+		width (min, max)
+	Color and style
+		border 
+		border-radius
+		background-color
+	Font things
+		family
+		size
+		align
+		color
+	Misc other things
+}
+*/
+
+@font-face{
+	font-family: Pacifico;
+	src: url(Pacifico-Regular.ttf);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+	text-decoration: none; 
+
+	outline: none;
+}
+
+strong{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+body{
+	/*Variable Declaration #66FCF1  #7FFEB3  #AFA3FE*/
+	--header_back_color:  #0B0C10;
+	--menu_color:      	  #66FCF1;
+	--hover_menu_color:   #45A29E;
+	--hover_tile_color:	  #e6fefd;
+	--header_text_color:  white;
+
+	--content_back_color: white;
+	background-color: var(--content_back_color);
+	--content_text_color: black;
+
+	--button_color:       var(--menu_color);
+	--hover_button_color: #45A29E;
+	--sidebar_text_color: black;
+	--button_height: 60px;
+
+	--caption_height: 40px;
+	--tile_spacing: 20px;
+	--tile_width: 325px;
+	--tile_height: calc(var(--tile_width) + var(--caption_height) + 15px);
+
+	--header_height: 90px;
+	--footer_height: 50px;
+	--footer_back_color:  #0B0C10;
+
+	font-family: Bookman, Arial, sans-serif;
+	font-size: 24px;
+	text-align: center;
+}
+
+
+button{
+	margin: 0;
+	padding: 0;
+	border: none;
+
+	font-family: Bookman;
+	font-size: 16px;
+}
+h1{
+	font-size: 100px;
+}
+
+h2{
+	font-size: 40px;
+}
+
+h3{
+	font-size: 30px;
+}
+h4{
+	font-size: 25px;
+}
+
+
+del{
+	text-decoration: line-through;
+}
+
+em{
+	font-style: italic; 
+}
+
+
+hr{
+	margin-top: 2px;
+	margin-bottom: 5px;
+
+	background-color: black;
+	height: 3px;
+}
+
+p{
+	font-size: 16px;
+	text-align: justify;
+	padding-left: 75px;
+	padding-right: 75px;
+	padding-top: 15px;
+	padding-bottom: 75px;
+}
+
+/*image stuff*/
+	img{
+		align-self: center;
+		max-height: 550px;
+		border-radius: 10px;
+	}
+
+	.row_img{
+		max-width: 450px;
+	}
+
+	.center{
+		display: block;
+		margin: 0 auto;
+		max-height: 400px;
+	}
+
+
+	.image_container{
+		display: flex;
+		justify-content: space-around;
+		flex-direction: row;
+		flex: 1;
+	}
+
+	.caption{
+		margin: 0 auto;
+		padding-top: 5px;
+
+		font-size: 25px;
+		text-align: center;
+		color: grey; 
+	}
+
+	.lazy{
+		max-height: 350px;
+	}
+
+
+
+
+
+/*Main sections*/
+	.header{
+		height: var(--header_height);
+		padding-top: 10px;
+
+		background-color: var(--header_back_color);
+
+		color: var(--header_text_color);
+
+
+	}
+
+		.menu_container{
+			padding-top: 10px;
+			padding-bottom: 0px;
+			overflow: hidden;
+		}
+
+
+
+	.banner{
+  		background: linear-gradient(to bottom, black 0%, rgba(22, 22, 22, 0.0) 25%, rgba(0, 0, 0, 0.1) 80%, black 100%), url('Opt_img/blue_classic.jpg');
+		font-family: Pacifico;
+		background-size: cover;
+		height: 110vh; 
+		padding-top: 35px;
+		color: var(--header_text_color);
+		}
+	.mid_banner{
+		background: linear-gradient(to bottom, black 0%, rgba(22, 22, 22, 0.0) 35%, rgba(0, 0, 0, 0.1) 75%, black 100%), url('Opt_img/BW_classic_porsch_racing.jpg');
+		font-family: Pacifico;
+		background-size: cover;
+		height: 110vh; 
+		padding-top: 110px;
+		color: var(--header_text_color);
+	}
+	.end_banner{
+		background: linear-gradient(to bottom, black 0%, rgba(22, 22, 22, 0.0) 35%, rgba(0, 0, 0, 0.1) 75%, black 100%), url('Opt_img/bw_front_end.jpg');
+		font-family: Pacifico;
+		background-size: cover;
+		height: 110vh; 
+		padding-top: 110px;
+		color: var(--header_text_color);
+	}
+
+
+	.middle{
+		overflow: hidden;
+		margin-right: auto;
+		margin-left: auto;
+
+		background-color: var(--content_back_color);
+		color: var(--content_text_color);
+
+		width: calc(var(--tile_width)*4 + var(--tile_spacing)*3);
+		}
+
+		.section_header{
+			height: 30px;
+			margin-bottom: 5px;
+			font-weight: bold;
+			padding-left: 5px;
+			font-size: 26px;
+
+			text-align: left;
+		}
+
+		.section_row{
+			height: var(--tile_height);
+
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+		}
+
+			.section_tile{
+				height: 100%;
+				width: var(--tile_width);
+				text-align: center;
+				border-radius: 20px;
+			}
+
+				.section_tile:hover{
+					background-color: var(--hover_tile_color);
+					cursor: pointer;
+				}
+
+				.placeholder:hover{
+					background-color: var(--background_color);
+					cursor: auto;
+				}
+
+			.tile_image{
+				max-width: calc(var(--tile_width) - 20px);
+				max-height: calc(var(--tile_height) - var(--caption_height) - 10px);
+				margin-top: 10px;
+				border-radius: 15px;			
+			}
+
+			.tile_caption{
+				height: var(--caption_height);
+				font-size: 16px;
+				padding-top: calc(var(--caption_height)/3);
+				font-weight: bold;
+			}
+
+		.project_page{
+			min-height: calc(100vh - var(--header_height) - var(--footer_height));
+		}
+
+		.content_title{
+			text-align: left;
+			font-size: 30px;
+			font-weight: bold;
+			padding-left: 10px;
+		}
+
+		.spacer{
+			height: 100px;
+		}
+
+		.spacer_misc{
+			height: 50px;
+		}
+
+		.row_spacer{
+			height: 10px;
+		}
+
+		
+
+	.footer{
+		padding-top: 30px;
+
+		height: var(--footer_height);
+
+		background-color: var(--footer_back_color);
+
+		font-size: 16px;
+		color: grey;
+	}
